@@ -13,14 +13,15 @@ var buildDir = pkg.config.buildDir;
 
 var entry = ['../src/index.js'];
 
-if (env.DEBUG) {
+if (env.DEV) {
   entry.push(`webpack-dev-server/client?http://${host}:${port}`);
+  entry.push('webpack/hot/dev-server');
 }
 
 var config = {
   context: path.join(__dirname, '../src'),
-  cache: env.DEBUG,
-  debug: env.DEBUG,
+  cache: env.DEV,
+  debug: env.DEV,
   target: 'web',
   devtool: !env.PROD ? 'inline-source-map' : false,
   entry: entry,
@@ -44,6 +45,7 @@ var config = {
   devServer: {
     contentBase: path.resolve(buildDir),
     noInfo: false,
+    hot: env.DEV,
     inline: true,
     stats: { colors: true },
     historyApiFallback: true

@@ -1,7 +1,7 @@
 {
-  "name": "interview",
+  "name": "react-boilerplate",
   "version": "1.0.0",
-  "description": "",
+  "description": "A boilerplate for ES6 react applications using webpack and babel.",
   "main": "src/index.js",
   "dependencies": {
     "react": "^0.14.3",
@@ -10,12 +10,20 @@
   "devDependencies": {
     "autoprefixer": "^6.2.1",
     "babel-loader": "^6.2.0",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
     "babel-preset-es2015": "^6.3.13",
     "babel-preset-react": "^6.3.13",
     "babel-preset-stage-0": "^6.3.13",
     "babel-register": "^6.3.13",
+    "css-loader": "^0.23.1",
     "extract-text-webpack-plugin": "^0.9.1",
+    "file-loader": "^0.8.5",
     "html-webpack-plugin": "^1.7.0",
+    "less": "^2.5.3",
+    "less-loader": "^2.2.2",
+    "postcss-loader": "^0.8.0",
+    "react-hot-loader": "^1.3.0",
+    "style-loader": "^0.13.0",
     "webpack": "^1.12.9",
     "webpack-dev-server": "^1.14.0"
   },

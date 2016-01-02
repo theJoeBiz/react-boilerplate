@@ -5,7 +5,8 @@ var env = require('./env');
 
 var LOADERS = {
   file: 'file-loader?name=[path][name].[ext]',
-  json: ['json-loader']
+  json: ['json-loader'],
+  js: ['babel']
 };
 
 var lessParams = [
@@ -16,6 +17,10 @@ var lessParams = [
 
 if (!env.PROD) {
   lessParams.push('sourceMap', 'sourceMapContents=true');
+
+  if (env.DEV) {
+    LOADERS.js.unshift('react-hot');
+  }
 
   LOADERS.less = [
     'style-loader',
@@ -46,7 +51,7 @@ module.exports = [
   {
     test: /\.js$/,
     exclude: /node_modules/,
-    loader: 'babel'
+    loaders: LOADERS.js
   },
   {
     test: /\.css$/,

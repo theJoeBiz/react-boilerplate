@@ -11,6 +11,12 @@ var plugins = [
   new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
 ];
 
+if (env.DEV) {
+  plugins.push(
+    new webpack.HotModuleReplacementPlugin()
+  );
+}
+
 if (env.PROD) {
   plugins.push(
     new ExtractTextPlugin(path.join('assets', 'css', '[name].css'), { allChunks: true }),
