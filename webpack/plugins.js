@@ -27,8 +27,9 @@ if (env.PROD) {
 }
 
 plugins.push(new HtmlWebpackPlugin({
-  template: 'src/index.html',
-  hash: true
+  template: 'index.html',
+  hash: true,
+  inject: false
 }));
 
 module.exports = plugins;
