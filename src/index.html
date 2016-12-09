@@ -7,9 +7,10 @@
   <% if (htmlWebpackPlugin.files.favicon) { %>
   <link rel="shortcut icon" type="image/png" href="/<%= htmlWebpackPlugin.files.favicon %>">
   <% } %>
-  
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <% htmlWebpackPlugin.files.css.forEach(function(cssFile) { %>
-  <link href="<%= cssFile %>" rel="stylesheet">
+  <link rel="stylesheet" href="<%= cssFile %>">
   <% }) %>
 </head>
 <body>
